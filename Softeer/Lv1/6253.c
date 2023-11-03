@@ -1,4 +1,4 @@
-// Softeer 6293. 주행거리 비교하기
+// Softeer 6253. 주행거리 비교하기
 // LV.1
 
 #include <stdio.h>
