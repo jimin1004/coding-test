@@ -35,17 +35,11 @@ int main()
             }
         }
         res += credit[i] * grade[grade_p].second;
+        credit_sum += credit[i];
         // cout << credit[i] << " " << grade[grade_p].second << '\n';
     }
 
-    // 수강 학점 합
-    for (int i = 0; i < 20; i++)
-    {
-        credit_sum += credit[i];
-        // cout << credit[i] << '\n';
-    }
-
-    cout << fixed;
+    // cout << fixed;
     cout << res / credit_sum;
 
     return 0;
