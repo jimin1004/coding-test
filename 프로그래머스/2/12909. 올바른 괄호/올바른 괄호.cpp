@@ -9,14 +9,13 @@ bool solution(string s)
     bool answer = true;
     int open_cnt = 0;
     int close_cnt = 0;
-    int opened = 0;
     vector <int> v;
     
-    if (s[0] == ')' || s[s.length()-1] == '(' || s.length() % 2 != 0) {
-        answer = false;
-        cout << "1";
-        return answer;
-    } 
+    // if (s[0] == ')' || s[s.length()-1] == '(' || s.length() % 2 != 0) {
+    //     answer = false;
+    //     cout << "1";
+    //     return answer;
+    // } 
     
    for (int i = 0; i < s.length(); i ++) {
        if (s[i] == '(') {
@@ -34,8 +33,8 @@ bool solution(string s)
        }
     }
     
-    if (opened == 1 || open_cnt - close_cnt != 0){
-        cout << "2 " << opened << " " << open_cnt << " " << close_cnt;
+    if (v.empty() == 0 || open_cnt - close_cnt != 0){
+        cout << "2 " << open_cnt << " " << close_cnt;
         answer = false;
     } 
 
