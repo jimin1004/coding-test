@@ -7,24 +7,24 @@ using namespace std;
 
 string solution(vector<string> participant, vector<string> completion) {
     map<string, int> m;
-    for (int i = 0; i < participant.size(); i++) {
-        if (m.find(participant[i]) == m.end()) {
-            m.insert(make_pair(participant[i], 1));
+    for (auto elem : participant) {
+        if (m.find(elem) == m.end()) {
+            m.insert(make_pair(elem, 1));
         } else {
-            m[participant[i]]++;
+            m[elem]++;
         }
     }
 
-    for (int i = 0; i < completion.size(); i++) {
-        m[completion[i]]--;
+    for (auto elem : completion) {
+        m[elem]--;
     }
-    
-    // for (auto i = m.begin(); i != m.end(); i++) {
-    //     cout << i->first << " " << i->second << "\n";
-    // }
 
-    for (auto i = m.begin(); i != m.end(); i++) {
-        if (i->second != 0) { return i->first;}
+    // for (auto i = m.begin(); i != m.end(); i++) {
+    //     if (i->second != 0) { return i->first;}
+    // }
+    
+    for (auto e : m) {
+        if (e.second != 0) { return e.first;}
     }
     
     string answer = "";
